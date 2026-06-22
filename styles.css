@@ -1,0 +1,200 @@
+:root {
+  --bg: #f2f7ff;
+  --panel: #ffffff;
+  --accent: #3a77ff;
+  --accent-2: #2fad85;
+  --text: #1f2d3d;
+  --muted: #5f6c7b;
+  --success: #2e8b57;
+  --danger: #d64545;
+  --shadow: 0 14px 30px rgba(52, 84, 154, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top left, #dbe9ff 0%, #f2f7ff 46%, #ffffff 100%);
+  min-height: 100vh;
+}
+
+.app-shell {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 0 0 12px;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.panel {
+  background: var(--panel);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.age-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+button,
+.age-button {
+  border: none;
+  border-radius: 16px;
+  padding: 16px 18px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.age-button {
+  background: linear-gradient(135deg, #3a77ff 0%, #4aa3ff 100%);
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 12px 24px rgba(58, 119, 255, 0.24);
+}
+
+.age-button:hover,
+button:hover {
+  transform: translateY(-2px);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.game-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.status-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  color: var(--muted);
+}
+
+.question-card,
+.choices-card {
+  background: #f8fbff;
+  border-radius: 20px;
+  padding: 18px;
+}
+
+.question-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.choices-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.choice-card {
+  min-height: 72px;
+  border-radius: 18px;
+  padding: 18px;
+  border: 2px solid transparent;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.choice-card.correct {
+  border-color: var(--success);
+  background: #e9f7ed;
+}
+
+.choice-card.incorrect {
+  border-color: var(--danger);
+  background: #ffeceb;
+}
+
+.choice-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 28px rgba(58, 119, 255, 0.14);
+}
+
+.hint {
+  margin-top: 14px;
+  color: var(--muted);
+}
+
+.controls-row {
+  margin-top: 24px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+button {
+  font-weight: 600;
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 12px 24px rgba(58, 119, 255, 0.24);
+}
+
+button.secondary {
+  background: #f3f4ff;
+  color: var(--text);
+}
+
+button#restartBtn {
+  margin-top: 18px;
+  width: 100%;
+  background: #f5f6fa;
+  color: var(--text);
+}
+
+.feedback {
+  margin-top: 18px;
+  min-height: 24px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.feedback.success {
+  color: var(--success);
+}
+
+.feedback.error {
+  color: var(--danger);
+}
+
+@media (max-width: 900px) {
+  .choices-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Logické slovní úlohy</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header>
+      <h1>Hlavička logických úloh</h1>
+      <p>Hra pro trénink myšlení bez nutnosti psát na papír. Vyber si věkovou skupinu a odpověz na otázky.</p>
+    </header>
+
+    <section class="panel age-panel" id="agePanel">
+      <h2>Vyber věkovou skupinu</h2>
+      <div class="age-buttons" id="ageButtons"></div>
+    </section>
+
+    <section class="panel game-panel hidden" id="gamePanel">
+      <div class="game-header">
+        <div>
+          <h2 id="groupTitle">Hra</h2>
+          <p id="groupDescription"></p>
+        </div>
+        <div class="status-row">
+          <span>Skóre: <strong id="scoreValue">0</strong></span>
+          <span>Otázka: <strong id="levelValue">1</strong>/<strong id="levelsTotal">5</strong></span>
+        </div>
+      </div>
+
+      <article class="question-card">
+        <h3>Otázka</h3>
+        <p class="question-text" id="taskInstruction">Cíl: přečti si otázku a vyber logickou odpověď.</p>
+        <p class="hint" id="hintText"></p>
+      </article>
+
+      <article class="choices-card">
+        <h3 id="choicesTitle">Možnosti</h3>
+        <div class="choices-grid" id="optionsGrid"></div>
+      </article>
+
+      <div class="controls-row">
+        <button id="hintBtn">Zobraz nápovědu</button>
+        <button id="nextBtn" class="secondary hidden">Další otázka</button>
+      </div>
+
+      <div class="feedback" id="feedback"></div>
+      <button class="back-button" id="restartBtn">Zpět na výběr věku</button>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
